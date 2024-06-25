@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# Job Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Chrome extension that opens up a side panel to help you track your job applications
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install the extension from manually on Chrome using dev mode
 
-## Expanding the ESLint configuration
+The extension build can be found [here](https://github.com/FatahChan/Job-Application-Tracker/releases)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Dev environment
 
-- Configure the top-level `parserOptions` property like this:
+#### Setup Database
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
+This project is built on Appwrite, so you need to create an account and setup a project and a database
+
+Then create a collection with the show attribute.
+
+<img width="941" alt="image" src="https://github.com/FatahChan/Job-Application-Tracker/assets/30260221/75f092a4-32f9-4dd6-8e1c-6a57e5fd81c4">
+
+copy the `.env.template` to `.env` and fill the missing environment variable from appwrite 
+
+#### Run Project
+I use [Bun](bun.dev) for this project, so I recommend doing the same.
+
+Run the command 
+```
+bun install
+bun dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Install the extension
+
+Enable developer mode on your browser extension page
+
+Click on Load unpacked extension 
+
+Select the dist dir from the project
