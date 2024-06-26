@@ -1,8 +1,9 @@
 import { type JobApplicationType } from '@/schema/Application';
 import { DataTable } from '../DataTable';
-import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
+import type { ColumnDef } from '@tanstack/react-table';
+import { createColumnHelper } from '@tanstack/react-table';
 import { Actions } from './ActionsCell';
-import { Document } from '@/schema/Appwrite';
+import type { Document } from '@/schema/Appwrite';
 import capitalize from 'lodash.capitalize';
 import SortableHeader from './SortableHeader';
 

@@ -1,7 +1,5 @@
+import type { ColumnDef, SortingState, VisibilityState } from '@tanstack/react-table';
 import {
-  ColumnDef,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,

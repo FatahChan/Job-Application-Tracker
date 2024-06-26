@@ -14,11 +14,14 @@ function EditApplication() {
   if (isFetching) return <div>Loading...</div>;
   if (isError) return <div>Error: {error.message}</div>;
   return (
-    <JobApplicationTrackerForm
-      defaultValues={data}
-      onSubmit={async (values) => {
-        mutate({ id, values });
-      }}
-    />
+    <>
+      <h1>Edit Application {id}</h1>
+      <JobApplicationTrackerForm
+        defaultValues={data}
+        onSubmit={async (values) => {
+          mutate({ id, values });
+        }}
+      />
+    </>
   );
 }

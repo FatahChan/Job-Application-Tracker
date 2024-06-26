@@ -7,7 +7,7 @@ const formSchema = z.object({
     .enum(['applied', 'scheduledInterview', 'interviewed', 'offered', 'rejected', 'accepted'])
     .default('applied'),
   posting: z.string({ message: 'Required' }).url('Invalid URL'),
-  salary: z.coerce.number().optional(),
+  salary: z.coerce.number().optional().nullable(),
   notes: z.string().optional().nullable(),
   applicationDate: z.coerce
     .date()

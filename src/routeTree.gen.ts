@@ -14,7 +14,7 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { Route as rootRoute } from './routes/__root';
 import { Route as protectedLayoutImport } from './routes/(protected)/_layout';
-import { Route as protectedLayoutIndexImport } from './routes/(protected)/_layout/index';
+import { Route as protectedLayoutIndexImport } from './routes/(protected)/_layout';
 import { Route as protectedLayoutApplicationIdImport } from './routes/(protected)/_layout/application/$id';
 
 // Create Virtual Routes

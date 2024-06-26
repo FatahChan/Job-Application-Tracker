@@ -1,6 +1,7 @@
-import { formSchema, JobApplicationType } from '@/schema/Application';
+import type { JobApplicationType } from '@/schema/Application';
+import { formSchema } from '@/schema/Application';
 import { DATABASE_ID, databases, JOB_APPLICATION_COLLECTION_ID } from '.';
-import { Document } from '@/schema/Appwrite';
+import type { Document } from '@/schema/Appwrite';
 import { useQuery } from '@tanstack/react-query';
 
 export const QUERY_KEY = 'jobApplications';

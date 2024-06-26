@@ -7,7 +7,7 @@ export const Route = createRootRoute({
       <main className="p-4">
         <Outlet />
       </main>
-      <TanStackRouterDevtools />
+      {import.meta.env.MODE === 'development' && <TanStackRouterDevtools />}
     </>
   ),
 });

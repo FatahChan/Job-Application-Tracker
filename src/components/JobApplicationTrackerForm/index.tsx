@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import type { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
 import { SelectItem } from '@/components/ui/select';
@@ -13,6 +13,7 @@ import SelectField from '../SelectField';
 import { Form } from '@/components/ui/form';
 
 import { type JobApplicationType, formSchema } from '@/schema/Application';
+import { useMemo } from 'react';
 
 export function JobApplicationTrackerForm({
   defaultValues,
@@ -21,20 +22,35 @@ export function JobApplicationTrackerForm({
   defaultValues?: Partial<JobApplicationType>;
   onSubmit?: (values: JobApplicationType) => Promise<void>;
 }) {
+  const _defaultValues: JobApplicationType = useMemo(
+    () => ({
+      role: '',
+      company: '',
+      posting: '',
+      salary: null,
+      notes: '',
+      status: 'applied',
+      applicationDate: new Date(),
+      interviewDate: null,
+      rejectionDate: null,
+      offerDate: null,
+      acceptanceDate: null,
+      ...defaultValues,
+    }),
+    [defaultValues]
+  );
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     mode: 'onBlur',
     reValidateMode: 'onChange',
-    defaultValues: {
-      status: 'applied',
-      applicationDate: new Date(),
-      ...defaultValues,
-    },
+    defaultValues: _defaultValues,
   });
+
   const handleSubmit = async (values: JobApplicationType) => {
     try {
       await onSubmit?.(values);
-      form.reset();
+      form.reset(_defaultValues);
     } catch (e) {
       console.error(e);
     }

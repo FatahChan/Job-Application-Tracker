@@ -1,6 +1,6 @@
 import { ID, Permission, Role } from 'appwrite';
 import { account, DATABASE_ID, databases, JOB_APPLICATION_COLLECTION_ID } from '.';
-import { JobApplicationType } from '@/schema/Application';
+import type { JobApplicationType } from '@/schema/Application';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { QUERY_KEY } from './queries';
 import { toast } from 'sonner';

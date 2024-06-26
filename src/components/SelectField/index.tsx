@@ -1,5 +1,5 @@
 import { Select, SelectTrigger, SelectValue, SelectContent } from '@/components/ui/select';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import type { FieldValues, Control, Path } from 'react-hook-form';
 import { FormField, FormItem, FormLabel, FormMessage, FormControl } from '@/components/ui/form';
 
