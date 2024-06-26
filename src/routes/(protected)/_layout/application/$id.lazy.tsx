@@ -1,9 +1,8 @@
-import { JobApplicationTrackerForm } from '@/components/JobApplicationTrackerForm';
 import { useUpdateApplication } from '@/lib/appwrite/mutation';
 import { useGetApplication } from '@/lib/appwrite/queries';
-import { createFileRoute } from '@tanstack/react-router';
-
-export const Route = createFileRoute('/(protected)/_layout/application/$id')({
+import { createLazyFileRoute } from '@tanstack/react-router';
+import { JobApplicationTrackerForm } from '@/components/JobApplicationTrackerForm';
+export const Route = createLazyFileRoute('/(protected)/_layout/application/$id')({
   component: () => <EditApplication />,
 });
 
